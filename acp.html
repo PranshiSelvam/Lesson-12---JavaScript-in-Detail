@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try and Catch Error Handling</title>
+</head>
+
+<body>
+
+    <h1>Try and Catch Error Message Project</h1>
+
+    <p>Click the button below to create an error and see how try–catch handles it.</p>
+
+    <button onclick="generateError()">Create Error</button>
+
+    <div id="message"></div>
+
+    <script>
+        function generateError() {
+            let resultDiv = document.getElementById("message");
+
+            try {
+                undefinedFunction();
+
+                resultDiv.textContent = "No errors found!";
+            }
+            catch (error) {
+                resultDiv.textContent = "Error caught: " + error.message;
+            }
+            finally {
+                console.log("The try–catch block has finished running.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
